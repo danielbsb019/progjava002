@@ -165,5 +165,30 @@ public class PaisDAO {
 		}
 		return lista;
 	}
+	
+	public String [] paises(Pais pais) {
+		String sqlSelect = "select * from pais";
+		try (Connection conn = ConexaoF.obtemConexao(); PreparedStatement stm = conn.prepareStatement(sqlSelect);) {
+			try (ResultSet rs = stm.executeQuery();) {
+
+				while (rs.next()) {
+
+					pais.setId(rs.getInt("Id_Pais"));
+					pais.setNome(rs.getString("Nome_Pais"));
+					pais.setPop(rs.getLong("Populacao_Pais"));
+					pais.setArea(rs.getDouble("Area_Pais"));
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e1) {
+			System.out.print(e1.getStackTrace());
+		}
+		return paises(pais );
+	}
+		
+		
+
 
 }

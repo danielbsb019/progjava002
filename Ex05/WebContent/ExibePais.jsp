@@ -1,24 +1,65 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
-
-<%@page import="model.Pais" %>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-
-<html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import= "model.Pais"%>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Pais</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> - Novo Pais</title>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
-<%Pais pais = (Pais)request.getAttribute("Pais"); %>
 
-Id: <%=pais.getId() %><br>
-Nome: <%=pais.getNome() %><br>
-Populacao: <%=pais.getPop() %><br>
-Area: <%=pais.getArea() %><br>
+              <c:import url="Menu.jsp"/>
 
+<div id="main" class="container">
+<h3 class="page-header">Ultimo Pais Incluido</h3>
+
+
+
+
+<div class="row">
+<div class="col-md-4">
+<p>id: ${Pais.id}</p>
+ 
+</div>
+</div>
+<br>
+<div class="row">
+<div class ="col-md-3">
+<p>Nome:  ${Pais.nome}</p>
+
+
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-3">
+<p>Populacao:  ${Pais.pop} </p>
+
+
+</div>
+</div>
+<br>
+
+<div class="row">
+<div class="col-md-2">
+<p>Area:  ${Pais.area}</p>
+ 
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
